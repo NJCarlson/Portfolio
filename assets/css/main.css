@@ -4060,6 +4060,68 @@ input, select, textarea {
 
 	}
 
+/* nav panel */
+.nav-panel {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px; /* Add spacing above */
+	margin-bottom: 20px; /* Add spacing below */
+  }
+  
+  .nav-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  }
+  
+  .nav-list li {
+	margin: 5px; /* Add margin around each button */
+  }
+  
+  .nav-link {
+	text-decoration: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color: #ffffff;
+	background-color: #69b3e6; /* Light blue background */
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover {
+	background-color: #5fa8db; /* Darker blue on hover */
+  }
+  
+  .nav-link:active {
+	background-color: #5495c8; /* Even darker blue when clicked */
+  }
+  
+  .nav-link.primary {
+	background-color: #4696e5;
+	color: #ffffff;
+  }
+  
+  .nav-link.primary:hover {
+	background-color: #5ca3e8;
+  }
+  
+  .nav-link.primary:active {
+	background-color: #3089e2;
+  }
+  
+  @media screen and (max-width: 768px) {
+	.nav-list {
+	  flex-direction: column;
+	  align-items: center;
+	}
+  
+	.nav-list li {
+	  margin: 10px 0; /* Adjust margin for vertical alignment */
+	}
+  }
+  
+
 /* Main */
 
 	#main {
