@@ -2741,6 +2741,49 @@ input, select, textarea {
 
 		}
 
+
+		.StaticSpotlight {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			margin: 0 0 2em 0;
+		}
+		
+		.StaticSpotlight .image {
+			width: 30%;
+			border-radius: 100%;
+			margin: 0 3em 0 0;
+			display: block;
+		}
+		
+		.StaticSpotlight .image img {
+			display: block;
+			border-radius: 100%;
+			width: 100%;
+		}
+		
+		.StaticSpotlight .content {
+			width: 70%;
+		}
+		
+		.StaticSpotlight .content > :last-child {
+			margin-bottom: 0;
+		}
+		
+		@media screen and (max-width: 736px) and (orientation: landscape) {
+		
+			.StaticSpotlight .image {
+				margin: 0 2em 0 0;
+			}
+		
+		}
+		
+
 /* Spotlight */
 
 	.spotlight {
