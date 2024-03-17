@@ -4254,3 +4254,7 @@ input, select, textarea {
 		}
 
 	}
+
+	.smaller-font {
+		font-size: 20px !important;
+	}
