@@ -44,7 +44,8 @@
 	// Scrolly.
 		$('.scrolly')
 			.scrolly({
-				speed: 1500
+				speed: 1500,
+				offset: -200
 			});
 
 })(jQuery);
