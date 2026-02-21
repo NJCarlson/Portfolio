@@ -6,53 +6,62 @@
     <title>Experience | Nicholas Carlson</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="Experience.html" class="active">Experience</a>
-            <a href="Projects.html">Projects</a>
-            <a href="Games.html">Games</a>
-            <a href="About.html">About</a>
+        <div class="nav-container">
+            <span class="nav-brand">NICHOLAS CARLSON</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Experience.html"class="active" >Experience</a>
+                <a href="Projects.html" >Projects</a>
+                <a href="Games.html">Games</a>
+                <a href="About.html">About</a>
+            </div>
         </div>
     </nav>
 
     <main class="container">
         <header class="page-header">
             <h1>Professional Background & Education</h1>
-            <p class="subtitle">8+ years of engineering across AI, Med-Tech, and Gaming.</p>
+            <p class="subtitle">8+ years of engineering across gaming, simulation, and web technology .</p>
+          <!--   <br>
+            <p class="subtitle"> See Projects and Games for more information.</p> -->
         </header>
 
         <section class="experience-list">
-            
+
             <article class="static-spotlight">
                 <div class="spotlight-image">
                     <img src="images/Rapport2.jpg" alt="Speech Graphics">
                 </div>
                 <div class="spotlight-content">
-                    <span class="date">Present</span>
-                    <h3>Senior Software Engineer | Speech Graphics / Rapport</h3>
-                    <p>Driving the development of AI-driven speech behavior following the acquisition of Aquifer Motion. I maintain Unity, Unreal, and Web platforms for Rapport.</p>
+      
+                    <h3>Senior Software Engineer | <br> Speech Graphics - Rapport | 2025 - Present</h3>
+                    <p>Leading the technical integration of AI-driven speech behavior systems following the acquisition of Aquifer Motion. I serve as the primary engineer for cross-platform deployment, ensuring seamless real-time performance across Unity, Unreal Engine, and Web environments.</p>
                     <ul>
-                        <li><strong>SGX:</strong> Automating accurate lip sync and nonverbal behavior from audio.</li>
-                        <li><strong>SG Com:</strong> Developing Runtime SDKs for real-time performance on any device.</li>
-                        <li><strong>Rapport:</strong> Powering AI-driven conversational marketing content.</li>
+                        <!-- <li><strong>Cross-Platform SDK Development:</strong> Architecting and optimizing Runtime SDKs to deliver low-latency, high-fidelity facial animations on mobile, desktop, and browser-based platforms.</li> -->
+                        <li><strong>API Architecture & Integration:</strong> Designing and implementing robust HTML/JS interfaces to connect front-end environments with cloud-based AI services and real-time speech APIs.</li>
+                        <li><strong>Engine Integration & Tooling:</strong> Developing deep-level integrations using C++ for Unreal and C# for Unity to bridge complex AI models with real-time rendering engines.</li>
+                        <li><strong>Scalable Interactive Systems:</strong> Engineering the foundational systems used for conversational AI, enabling responsive and human-like engagement in interactive learning and marketing applications.</li>
                     </ul>
                 </div>
             </article>
 
             <article class="static-spotlight">
                 <div class="spotlight-image">
-                    <img src="images/aquifer_motion_logo.jpeg" alt="Aquifer Motion">
+                    <a href="https://www.aquifermotion.com/" target="_blank">
+                        <img src="images/aquifer_motion_logo.jpeg" alt="Aquifer Motion">
+                    </a>
                 </div>
                 <div class="spotlight-content">
-                    <h3>Senior Unity Engineer | Aquifer Motion</h3>
-                    <p>Pivotal role in building tools for global brands in film, TV, and gaming to create instant animated content.</p>
+                    <h3>Senior Unity Engineer | <br> Aquifer Motion | 2022 - 2025</h3>
+                    <p>Played a pivotal role in the engineering and product growth of Aquifer Motion, leading to its <strong>successful acquisition by Speech Graphics</strong>. Post-acquisition, I was retained to lead the continued technical integration of our proprietary animation technology.</p>
                     <ul>
-                        <li>Delivered content tools for brands like <strong>Paw Patrol, Transformers, and Peppa Pig</strong>.</li>
-                        <li>Maintained Aquifer Studio for VO-to-animation pipelines.</li>
-                        <li>Developed "Ask ABC Mouse" leveraging OpenAI for branded educational experiences.</li>
+                        <li><strong>Core Product Development:</strong> Built and maintained the <strong>Aquifer Studio</strong> Unity application, the flagship platform for instant, high-fidelity character animation.</li>
+                        <li><strong>Character AI Refinement:</strong> Engineered systems to refine AI-generated facial animations for world-class IP, including <strong>Paw Patrol, Peppa Pig, Transformers, Baby Shark, and Care Bears</strong>.</li>
+                        <li><strong>AI Educational Innovation:</strong> Architected and developed <strong>Ask ABC Mouse</strong>, leveraging OpenAI's GPT-4 to create branded, real-time conversational educational experiences.</li>
+                        <li><strong>Technical Value:</strong> Developed the essential tools and asset pipelines that drove the company's valuation and solidified the technical foundation for the eventual acquisition.</li>
                     </ul>
                 </div>
             </article>
@@ -62,11 +71,11 @@
                     <img src="images/SimetriLogo2.jpeg" alt="Simetri Inc">
                 </div>
                 <div class="spotlight-content">
-                    <h3>Software Engineer | Simetri Inc</h3>
+                    <h3>Software Engineer | Simetri | 2020-2022 </h3>
                     <p>Collaborated with interdisciplinary teams to develop medical training simulations for government and private sectors.</p>
                     <ul>
                         <li>Created Unity apps interfacing with hardware via WiFi and BLE protocols.</li>
-                        <li>Contributed to multi-million dollar AR experiences using Hololens 2 and MRTK.</li>
+                        <li>Contributed to multi-million dollar AR experiences using Hololens 2 (IVAS) and MRTK.</li>
                     </ul>
                 </div>
             </article>
@@ -76,7 +85,7 @@
                     <img src="images/MVP.png" alt="MVP Sports Clubs">
                 </div>
                 <div class="spotlight-content">
-                    <h3>Systems Information Developer | MVP Sports Clubs</h3>
+                    <h3>Systems Information Developer | <br> MVP Sports Clubs | 2018-2020 </h3>
                     <p>Designed and maintained core fitness and recreational community systems.</p>
                     <ul>
                         <li>Built a RESTful API in C# for MSSQL database requests and financial transactions.</li>
@@ -90,10 +99,11 @@
                     <img src="images/FullSail.png" alt="Full Sail University">
                 </div>
                 <div class="spotlight-content">
-                    <h3>Master’s in Game Design | Full Sail University</h3>
+                    <h3>Master's in Game Design | <br> Full Sail University | 2018 </h3>
+                    <p>Recognized for reliability and punctuality with multiple perfect attendance awards.</p>
                     <p>Released educational and entertaining games in a studio environment.</p>
                     <ul>
-                        <li>Led a team of 8 for the development of <em>Lore Keeper</em> and VR experiences like <em>Brew-Ha!</em></li>
+                        <li>Led teams of 4-8 people in the development and design of games like <em>Lore Keeper Chapter 3</em>, <em>Data Thief</em>, and <em>Brew-Ha!</em> </li>
                     </ul>
                 </div>
             </article>
@@ -103,17 +113,19 @@
         <section class="skills-grid">
             <div class="skill-category">
                 <h4>Engines & Languages</h4>
-                <p>Unity, Unreal, C#, C++, Python, JavaScript, SQL, OpenGL.</p>
+                <p>Unity, Unreal, C#, C++, Python, JavaScript, Node.js, React, TypeScript, SQL, OpenGL.</p>
             </div>
             <div class="skill-category">
                 <h4>Tools & Workflow</h4>
-                <p>Git, Perforce, Jira, Notion, CI/CD, Agile/Scrum.</p>
+                <p>Git, Perforce, Trello, Jira, Confluence, Notion, Figma, Postman, Maya, Blender, TinkerCad, Audacity, OBS. Agile (scrum, kanban).</p>
             </div>
             <div class="skill-category">
                 <h4>Specialized</h4>
-                <p>AR/VR (Hololens/MRTK), UI/UX, 3D Modeling (Maya/Blender), Hardware/Soldering.</p>
+                <p>Game Design, AI Prompt Engineering, AR/VR (Hololens, HTC Vive, Oculus Rift), UI/UX, 3D Modeling, RESTful API Development, Hardware + Soldering, 3D Printing </p>
             </div>
         </section>
+
+        
     </main>
 
     <footer class="footer">
@@ -128,21 +140,29 @@
     <script>
         const btn = document.getElementById("theme-toggle");
         const body = document.body;
-
+    
+        //Function to keep button text in sync
         const updateBtnText = () => {
             btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
         };
-
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            updateBtnText();
+    
+        // Check local storage. If they previously chose 'light', remove the default dark-mode
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.remove("dark-mode");
         }
-
+    
+        // Initialize button text on load
+        updateBtnText();
+    
+        // Toggle logic
         btn.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+            // Save the current state
+            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("theme", currentTheme);
             updateBtnText();
         });
     </script>
+
 </body>
 </html>

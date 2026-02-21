@@ -6,17 +6,19 @@
     <title>Nicholas Carlson | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="https://njcarlson.github.io/Portfolio/" class="active">Home</a>
-            <a href="Experience.html">Experience</a>
-            <a href="Projects.html">Projects</a>
-            <a href="Games.html">Games</a>
-            <a href="About.html">About</a>
+        <div class="nav-container">
+            <span class="nav-brand">NICHOLAS CARLSON</span>
+            <div class="nav-links">
+                <a href="index.html" class="active" >Home</a>
+                <a href="Experience.html">Experience</a>
+                <a href="Projects.html" >Projects</a>
+                <a href="Games.html">Games</a>
+                <a href="About.html">About</a>
+            </div>
         </div>
-       
     </nav>
 
     <header class="hero">
@@ -82,19 +84,26 @@
     <script>
         const btn = document.getElementById("theme-toggle");
         const body = document.body;
-
+    
+        //Function to keep button text in sync
         const updateBtnText = () => {
             btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
         };
-
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            updateBtnText();
+    
+        // Check local storage. If they previously chose 'light', remove the default dark-mode
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.remove("dark-mode");
         }
-
+    
+        // Initialize button text on load
+        updateBtnText();
+    
+        // Toggle logic
         btn.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+            // Save the current state
+            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("theme", currentTheme);
             updateBtnText();
         });
     </script>

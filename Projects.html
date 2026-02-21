@@ -6,21 +6,24 @@
     <title>Projects | Nicholas Carlson</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="Experience.html">Experience</a>
-            <a href="Projects.html" class="active">Projects</a>
-            <a href="Games.html">Games</a>
-            <a href="About.html">About</a>
+        <div class="nav-container">
+            <span class="nav-brand">NICHOLAS CARLSON</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Experience.html">Experience</a>
+                <a href="Projects.html" class="active">Projects</a>
+                <a href="Games.html">Games</a>
+                <a href="About.html">About</a>
+            </div>
         </div>
     </nav>
 
     <header class="page-header">
-        <h1>Technical Projects</h1>
-        <p class="subtitle">AI, AR, and Embedded Systems Engineering.</p>
+        <h1>Projects</h1>
+        <p class="subtitle">Projects by a Senior Engineer specializing in Unity Development, UI/UX Design, and Full-Stack Web & Application Architecture.</p>
     </header>
 
     <main class="container">
@@ -55,7 +58,7 @@
                     <p>Instant animation for world-class brands. Simplifying storytelling through high-fidelity automation for film, TV, and Web3 entertainment.</p>
                     <ul>
                         <li>Created in-house tools for artists to format custom IP assets efficiently.</li>
-                        <li>Refined AI-generated facial animations for characters like **Care Bears** and **Baby Shark**.</li>
+                        <li>Refined AI-generated facial animations for well known characters, including <strong>Paw Patrol, Peppa Pig, Baby Shark, Care Bears, Transformers and More! </strong>
                         <li>Architected the asset pipeline and organized major version control repositories.</li>
                     </ul>
                     <a href="https://www.aquifermotion.com/" class="btn" target="_blank" style="margin-top: 15px;">Learn More</a>
@@ -140,21 +143,29 @@
     <script>
         const btn = document.getElementById("theme-toggle");
         const body = document.body;
-
+    
+        //Function to keep button text in sync
         const updateBtnText = () => {
             btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
         };
-
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            updateBtnText();
+    
+        // Check local storage. If they previously chose 'light', remove the default dark-mode
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.remove("dark-mode");
         }
-
+    
+        // Initialize button text on load
+        updateBtnText();
+    
+        // Toggle logic
         btn.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+            // Save the current state
+            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("theme", currentTheme);
             updateBtnText();
         });
     </script>
+
 </body>
 </html>

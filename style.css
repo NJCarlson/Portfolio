@@ -29,17 +29,38 @@ body {
 
 /* --- 3. NAVIGATION --- */
 .navbar {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 10%;
+    background-color: var(--bg);
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    border-bottom: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    color: #ffffff; /* Forced White as requested */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-right: 30px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text);
-    margin-right: 20px;
     font-weight: 600;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -81,6 +102,11 @@ body {
     letter-spacing: 1px;
 }
 
+.subtitle {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
 .hero-description {
     margin-bottom: 2.5rem;
     max-width: 550px;
@@ -91,7 +117,6 @@ body {
     height: 240px;
     object-fit: cover;
     border: 1px solid var(--border);
-    display: block; /* Support centering */
 }
 
 .btn {
@@ -159,7 +184,6 @@ body.dark-mode .icon-invert { filter: invert(1); }
     object-fit: contain;
     border: 1px solid var(--border);
     padding: 10px;
-    display: block;
 }
 
 .spotlight-content { flex: 1; }
@@ -222,40 +246,18 @@ body.dark-mode .icon-invert { filter: invert(1); }
 
 /* --- 9. MOBILE RESPONSIVE (Centering Focus) --- */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 1.5rem; gap: 1.5rem; }
-    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .nav-container { flex-direction: column; gap: 1rem; text-align: center; }
+    .nav-brand { margin-right: 0; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
     
-    /* Hero Centering */
-    .hero-container { 
-        flex-direction: column-reverse; 
-        text-align: center; 
-        align-items: center; /* Center flex items */
-    }
-    .hero-image img { 
-        margin: 0 auto 2rem auto; /* Horizontally center */
-        width: 200px; 
-        height: 200px; 
-    }
+    .hero-container { flex-direction: column-reverse; text-align: center; align-items: center; }
+    .hero-image img { margin: 0 auto 2rem auto; width: 200px; height: 200px; }
 
-    /* Spotlight Centering (Projects/Experience/Games) */
-    .static-spotlight { 
-        flex-direction: column; 
-        text-align: center; 
-        align-items: center; /* Center children */
-    }
-    .spotlight-image {
-        width: 100%;
-        display: flex;
-        justify-content: center; /* Center the image in the container */
-    }
-    .spotlight-image img { 
-        width: 100%; 
-        max-width: 300px; 
-        margin: 0 auto; /* Ensure centering */
-    }
+    .static-spotlight { flex-direction: column; text-align: center; align-items: center; }
+    .spotlight-image { width: 100%; display: flex; justify-content: center; }
+    .spotlight-image img { width: 100%; max-width: 300px; margin: 0 auto; }
 
-    .spotlight-content ul { text-align: left; } /* Keep text readable */
-    
+    .spotlight-content ul { text-align: left; }
     .skills-grid { grid-template-columns: 1fr; }
     .spotlight-grid { grid-template-columns: 1fr; }
 }

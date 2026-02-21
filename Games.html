@@ -8,15 +8,18 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dark-mode">
 
 	<nav class="navbar">
-		<div class="nav-links">
-			<a href="index.html">Home</a>
-			<a href="Experience.html">Experience</a>
-			<a href="Projects.html">Projects</a>
-			<a href="Games.html" class="active">Games</a>
-			<a href="About.html">About</a>
+		<div class="nav-container">
+			<span class="nav-brand">NICHOLAS CARLSON</span>
+			<div class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="Experience.html" >Experience</a>
+				<a href="Projects.html" >Projects</a>
+				<a href="Games.html" class="active" >Games</a>
+				<a href="About.html">About</a>
+			</div>
 		</div>
 	</nav>
 
@@ -112,7 +115,8 @@
 
 			<article class="static-spotlight">
 				<div class="spotlight-image">
-					<a href="https://play.google.com/store/apps/details?id=com.cellecgames.Lorekeeper3&hl=en_US" target="_blank">
+					<a href="https://play.google.com/store/apps/details?id=com.cellecgames.Lorekeeper3&hl=en_US"
+						target="_blank">
 						<img src="images/LoreKeeper.jpg" alt="LoreKeeper">
 					</a>
 				</div>
@@ -129,8 +133,8 @@
 						<li>Designed and developed UI</li>
 						<li>Developed in Unity using C# for mobile platforms.</li>
 					</ul>
-					<a href="https://play.google.com/store/apps/details?id=com.cellecgames.Lorekeeper3&hl=en_US" class="btn" target="_blank"
-						style="margin-top: 15px;">App Store Page</a>
+					<a href="https://play.google.com/store/apps/details?id=com.cellecgames.Lorekeeper3&hl=en_US"
+						class="btn" target="_blank" style="margin-top: 15px;">App Store Page</a>
 				</div>
 			</article>
 
@@ -147,24 +151,32 @@
 	</footer>
 
 	<script>
-		const btn = document.getElementById("theme-toggle");
-		const body = document.body;
+        const btn = document.getElementById("theme-toggle");
+        const body = document.body;
+    
+        //Function to keep button text in sync
+        const updateBtnText = () => {
+            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+        };
+    
+        // Check local storage. If they previously chose 'light', remove the default dark-mode
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.remove("dark-mode");
+        }
+    
+        // Initialize button text on load
+        updateBtnText();
+    
+        // Toggle logic
+        btn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            // Save the current state
+            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("theme", currentTheme);
+            updateBtnText();
+        });
+    </script>
 
-		const updateBtnText = () => {
-			btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-		};
-
-		if (localStorage.getItem("theme") === "dark") {
-			body.classList.add("dark-mode");
-			updateBtnText();
-		}
-
-		btn.addEventListener("click", () => {
-			body.classList.toggle("dark-mode");
-			localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-			updateBtnText();
-		});
-	</script>
 </body>
 
 </html>
