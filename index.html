@@ -33,16 +33,14 @@
                 <div class="hero-description">
                     <p>Master's in Game Design, Computer Science from Full Sail University.</p>
                 </div>
-
+                <br>
                 <div class="hero-actions">
                     <a href="Files/NicholasJCarlson_Resume.pdf" class="btn">Download Resume</a>
                 </div>
             </div>
 
             <div class="hero-image">
-                <a href="https://www.linkedin.com/in/nicholasjcarlson/"> 
                 <img src="images/NJC.jpg"  alt="Nicholas Joseph Carlson">
-                </a>
             </div>
         </div>
     </header>
@@ -92,32 +90,7 @@
         <p>&copy; 2026 Nicholas Joseph Carlson</p>
     </footer>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const body = document.body;
-    
-        //Function to keep button text in sync
-        const updateBtnText = () => {
-            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-        };
-    
-        // Check local storage. If they previously chose 'light', remove the default dark-mode
-        if (localStorage.getItem("theme") === "light") {
-            body.classList.remove("dark-mode");
-        }
-    
-        // Initialize button text on load
-        updateBtnText();
-    
-        // Toggle logic
-        btn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            // Save the current state
-            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
-            localStorage.setItem("theme", currentTheme);
-            updateBtnText();
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>

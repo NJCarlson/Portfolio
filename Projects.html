@@ -35,7 +35,7 @@
             <article class="static-spotlight">
                 <div class="spotlight-image">
                     <a href="https://www.rapport.cloud/" target="_blank">
-                        <img src="images/Rapport.jpg" alt="Rapport Cloud">
+                        <img src="images/Rapport2.jpg" alt="Rapport Cloud">
                     </a>
                 </div>
                 <div class="spotlight-content">
@@ -150,27 +150,7 @@
         <p>&copy; 2026 Nicholas Joseph Carlson</p>
     </footer>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const body = document.body;
-    
-        const updateBtnText = () => {
-            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-        };
-    
-        if (localStorage.getItem("theme") === "light") {
-            body.classList.remove("dark-mode");
-        }
-    
-        updateBtnText();
-    
-        btn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
-            localStorage.setItem("theme", currentTheme);
-            updateBtnText();
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>

@@ -46,6 +46,10 @@ body {
 
 .nav-brand-link { text-decoration: none; }
 
+.nav-brand-link:hover {
+    opacity: 0.8; 
+}
+
 .nav-brand {
     color: var(--text);
     font-weight: 800;

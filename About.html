@@ -33,7 +33,7 @@
                 <div class="hero-description">
                     <p>With 8+ years of professional experience, I specialize in bridging the gap between complex engineering and immersive user experiences. Whether I'm architecting systems or fine-tuning gameplay mechanics, my goal is always to build software that feels as good as it functions.</p>
                 </div>
-
+                <br>
                 <div class="hero-actions">
                     <a href="Files/NicholasJCarlson_Resume.pdf" class="btn">View Resume</a>
                 </div>
@@ -75,32 +75,7 @@ My design philosophy is deeply rooted in the classics that shaped me. My all-tim
         <p>&copy; 2026 Nicholas Joseph Carlson</p>
     </footer>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const body = document.body;
-    
-        //Function to keep button text in sync
-        const updateBtnText = () => {
-            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-        };
-    
-        // Check local storage. If they previously chose 'light', remove the default dark-mode
-        if (localStorage.getItem("theme") === "light") {
-            body.classList.remove("dark-mode");
-        }
-    
-        // Initialize button text on load
-        updateBtnText();
-    
-        // Toggle logic
-        btn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            // Save the current state
-            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
-            localStorage.setItem("theme", currentTheme);
-            updateBtnText();
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>

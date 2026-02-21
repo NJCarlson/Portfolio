@@ -34,7 +34,9 @@
 
             <article class="static-spotlight">
                 <div class="spotlight-image">
-                    <img src="images/Rapport2.jpg" alt="Speech Graphics">
+                    <a href="https://www.speech-graphics.com/"> 
+                    <img src="images/speechgraphics.png" alt="Speech Graphics">
+                    </a>
                 </div>
                 <div class="spotlight-content">
       
@@ -68,7 +70,9 @@
 
             <article class="static-spotlight">
                 <div class="spotlight-image">
+                    <a href = "https://simetri.us/">
                     <img src="images/SimetriLogo2.jpeg" alt="Simetri Inc">
+                    </a>
                 </div>
                 <div class="spotlight-content">
                     <h3>Software Engineer | Simetri | 2020-2022 </h3>
@@ -82,7 +86,9 @@
 
             <article class="static-spotlight">
                 <div class="spotlight-image">
+                    <a href="https://www.mvpsportsclubs.com/" >
                     <img src="images/MVP.png" alt="MVP Sports Clubs">
+                    </a>
                 </div>
                 <div class="spotlight-content">
                     <h3>Systems Information Developer | <br> MVP Sports Clubs | 2018-2020 </h3>
@@ -96,7 +102,9 @@
 
             <article class="static-spotlight">
                 <div class="spotlight-image">
+                    <a href="https://www.fullsail.edu/">
                     <img src="images/FullSail.png" alt="Full Sail University">
+                    </a>
                 </div>
                 <div class="spotlight-content">
                     <h3>Master's in Game Design | <br> Full Sail University | 2018 </h3>
@@ -137,32 +145,6 @@
         <p>&copy; 2026 Nicholas Joseph Carlson</p>
     </footer>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const body = document.body;
-    
-        //Function to keep button text in sync
-        const updateBtnText = () => {
-            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-        };
-    
-        // Check local storage. If they previously chose 'light', remove the default dark-mode
-        if (localStorage.getItem("theme") === "light") {
-            body.classList.remove("dark-mode");
-        }
-    
-        // Initialize button text on load
-        updateBtnText();
-    
-        // Toggle logic
-        btn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            // Save the current state
-            const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
-            localStorage.setItem("theme", currentTheme);
-            updateBtnText();
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

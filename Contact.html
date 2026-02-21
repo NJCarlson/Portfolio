@@ -50,6 +50,8 @@
                 
                 <form action="https://api.web3forms.com/submit" method="POST" id="form">
                     <input type="hidden" name="access_key" value="375ec1d0-f4c3-4cb9-b55b-4a5c02566858">
+                    <input type="hidden" name="subject" value="New Portfolio Contact">
+                    <input type="hidden" name="from_name" value="Portfolio Notifier">
                     
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -84,51 +86,8 @@
         <p>&copy; 2026 Nicholas Joseph Carlson</p>
     </footer>
 
-    <script>
-        /* Theme Toggle Logic */
-        const btn = document.getElementById("theme-toggle");
-        const body = document.body;
-        const updateBtnText = () => { btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode"; };
-        if (localStorage.getItem("theme") === "light") { body.classList.remove("dark-mode"); }
-        updateBtnText();
-        btn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-            updateBtnText();
-        });
 
-        /* Web3Forms AJAX Submission (Prevents page reload) */
-        const form = document.getElementById('form');
-        const result = document.getElementById('result');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Sending...";
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "Message sent successfully!";
-                    result.style.color = "green";
-                    form.reset();
-                } else {
-                    result.innerHTML = json.message;
-                    result.style.color = "red";
-                }
-            })
-            .catch(error => {
-                result.innerHTML = "Something went wrong!";
-                result.style.color = "red";
-            });
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
