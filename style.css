@@ -301,3 +301,22 @@ body.dark-mode .icon-invert { filter: invert(1); }
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+.nav-brand-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand-link:hover {
+    opacity: 0.8; /* Subtle feedback when hovering */
+}
+
+.nav-brand {
+    color: #ffffff !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
