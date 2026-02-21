@@ -43,7 +43,7 @@ body {
 }
 
 .nav-brand {
-    color: #ffffff; /* Forced White as requested */
+    color: #ffffff; /* Forced White */
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -129,6 +129,7 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     border: 1px solid var(--accent);
+    cursor: pointer;
     transition: var(--transition);
 }
 
@@ -137,7 +138,7 @@ body {
 /* --- 5. GRID & CARDS --- */
 .spotlight-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     padding: 5rem 10%;
     max-width: 1200px;
@@ -260,4 +261,43 @@ body.dark-mode .icon-invert { filter: invert(1); }
     .spotlight-content ul { text-align: left; }
     .skills-grid { grid-template-columns: 1fr; }
     .spotlight-grid { grid-template-columns: 1fr; }
+}
+
+/* --- 10. FORMS --- */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#result {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

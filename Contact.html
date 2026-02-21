@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nicholas Carlson</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="nav-brand">NICHOLAS CARLSON</span>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="Experience.html">Experience</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Games.html">Games</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            
+            <div class="hero-text">
+                <h1>Get In Touch</h1>
+                <p class="subtitle">Let's build something incredible together.</p>
+                
+                <div class="hero-description">
+                    <p> I'm always open to discussing new opportunities, technical collaborations, or innovative projects. Whether you're looking to hire for a senior role or just want to talk shop about game architecture, feel free to reach out. </p>
+                </div>
+            </div>
+
+            <div class="icon-invert">
+                <img src="images/email.png" alt="Nicholas Joseph Carlson">
+            </div> 
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-content">
+            <div class="content-block">
+                <h2>Send a Message</h2>
+                
+                <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                    <input type="hidden" name="access_key" value="375ec1d0-f4c3-4cb9-b55b-4a5c02566858">
+                    <input type="hidden" name="subject" value="New Portfolio Contact">
+                    <input type="hidden" name="from_name" value="Portfolio Notifier">
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="How can I help you?" required></textarea>
+                    </div>
+
+                    <div class="hero-actions" style="margin-top: 2rem;">
+                        <button type="submit" class="btn">Send Message</button>
+                    </div>
+                    
+                    <div id="result" style="margin-top: 1rem; font-weight: 600;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/nicholasjcarlson/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/NJCarlson" target="_blank">GitHub</a>
+            <button id="theme-toggle" aria-label="Toggle Theme">Dark Mode</button>
+        </div>
+        <p>&copy; 2026 Nicholas Joseph Carlson</p>
+    </footer>
+
+    <script>
+        /* Theme Toggle Logic */
+        const btn = document.getElementById("theme-toggle");
+        const body = document.body;
+        const updateBtnText = () => { btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode"; };
+        if (localStorage.getItem("theme") === "light") { body.classList.remove("dark-mode"); }
+        updateBtnText();
+        btn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+            updateBtnText();
+        });
+
+        /* Web3Forms AJAX Submission (Prevents page reload) */
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Sending...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Message sent successfully!";
+                    result.style.color = "green";
+                    form.reset();
+                } else {
+                    result.innerHTML = json.message;
+                    result.style.color = "red";
+                }
+            })
+            .catch(error => {
+                result.innerHTML = "Something went wrong!";
+                result.style.color = "red";
+            });
+        });
+    </script>
+</body>
+</html>
